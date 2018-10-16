@@ -67,13 +67,18 @@
 				<groupId>com.microsoft.azure</groupId>
 				<artifactId>azure-webapp-maven-plugin</artifactId>
 				<configuration>
+					<javaVersion>1.8</javaVersion>
+					<javaWebContainer>tomcat 9.0</javaWebContainer>
+
+					<authentication>
+						<serverId>azure-auth</serverId>
+					</authentication>
+
 					<!-- Web App information -->
 					<resourceGroup>Team2-FrontEnd</resourceGroup>
 					<appName>Team2-BackEnd</appName>
 
-					<javaVersion>1.8</javaVersion>
 					<!-- Java Runtime Stack for Web App on Linux-->
-					<javaWebContainer>tomcat 9.0</javaWebContainer>
 				</configuration>
 			</plugin>
 		</plugins>
