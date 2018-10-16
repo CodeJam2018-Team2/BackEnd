@@ -64,21 +64,13 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>com.microsoft.azure</groupId>
-				<artifactId>azure-webapp-maven-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
 				<configuration>
-					<javaVersion>1.8</javaVersion>
-					<javaWebContainer>tomcat 9.0</javaWebContainer>
-
-					<authentication>
-						<serverId>azure-auth</serverId>
-					</authentication>
-
-					<!-- Web App information -->
-					<resourceGroup>Team2-FrontEnd</resourceGroup>
-					<appName>Team2-BackEnd</appName>
-
-					<!-- Java Runtime Stack for Web App on Linux-->
+					<!-- Since ears/wars are large artifacts, if you have no jars as submodules,
+						feel free to uncomment the section below. This will stop the ears/wars from
+						deploying to nexus on releases. -->
+					<!-- <goals>install</goals> -->
 				</configuration>
 			</plugin>
 		</plugins>
