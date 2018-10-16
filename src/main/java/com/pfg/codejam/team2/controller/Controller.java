@@ -18,7 +18,7 @@ public class Controller {
 	@RequestMapping(value="/request", method = RequestMethod.POST)
 	public ResponseEntity<String> getData(@RequestParam("id") long id) {
 
-		return new ResponseEntity<>(HttpStatus.OK);
+		return new ResponseEntity<String>(HttpStatus.OK);
 	}
 
 }
