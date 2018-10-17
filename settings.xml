@@ -1,0 +1,9 @@
+<server>
+	<id>azure-auth</id>
+	<configuration>
+		<client>1ead7ef8-bd2a-4e42-8db9-41c91c1d998d</client>
+		<tenant>3bea478c-1684-4a8c-8e85-045ec54ba430</tenant>
+		<key>wNzMZxgKbMJf4327NE0vSv4QjDV2g2U5+sSeHz/195M=</key>
+		<environment>AZURE</environment>
+	</configuration>
+</server>
