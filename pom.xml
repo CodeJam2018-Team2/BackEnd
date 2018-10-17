@@ -16,10 +16,6 @@
 		<spring.version>4.2.6.RELEASE</spring.version>
 	</properties>
 
-	<build>
-		<finalName>${project.artifactId}</finalName>
-	</build>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -63,5 +59,41 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.12</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.microsoft.azure</groupId>
+				<artifactId>azure-webapp-maven-plugin</artifactId>
+				<version>1.4.1</version>
+				<configuration>
+					<!-- Reference <serverId> in Maven's settings.xml to authenticate with Azure -->
+					<authentication>
+						<serverId>azure-auth</serverId>
+					</authentication>
+
+					<!-- Web App information -->
+					<resourceGroup>Team2-FrontEnd</resourceGroup>
+					<appName>Team2-BackEnd</appName>
+
+					<!-- Java Runtime Stack for Web App on Windows-->
+					<javaVersion>1.8</javaVersion>
+					<javaWebContainer>tomcat 8.5</javaWebContainer>
+
+					<!-- If <path> is not specified, the war file will be deployed to ROOT -->
+					<path>/${project.build.finalName}</path>
+
+					<!-- Application Settings of your Web App -->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
